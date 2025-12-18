@@ -1,17 +1,12 @@
 package com.example.crud_demo.model;
 
 import jakarta.persistence.*;
-import lombok.Getter;
-import lombok.Setter;
 
 import java.math.BigDecimal;
 
 @Entity
-@Getter
-@Setter
 @Table(name = "products")
 public class Product {
-
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
@@ -20,4 +15,11 @@ public class Product {
 
     private BigDecimal price;
 
+    public Long getId() { return id; }
+    public String getName() { return name; }
+    public BigDecimal getPrice() { return price; }
+
+    public void setId(Long id) { this.id = id; }
+    public void setName(String name) { this.name = name; }
+    public void setPrice(BigDecimal price) { this.price = price; }
 }
